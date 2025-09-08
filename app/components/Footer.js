@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { FaEnvelope, FaGithub } from 'react-icons/fa'
+import { FaEnvelope, FaGithub, FaLinkedinIn } from 'react-icons/fa'
 
 const Footer = () => {
 
@@ -13,11 +13,18 @@ const Footer = () => {
                 Home
               </Link>
               <Link
-                href="https://github.com/AliAsadullahShahbaz"
+                href="https://github.com/hamsashahbaz11-rgb"
                 target="_blank"
                 className="flex items-center gap-1 hover:text-gray-400 transition px-2 sm:px-4"
               >
                 <FaGithub size={16} className="w-3 h-3 sm:w-4 sm:h-4" />   GitHub
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/hamza-shahbaz-a37637380/"
+                target="_blank"
+                className="flex items-center gap-1 hover:text-gray-400 transition px-2 sm:px-4"
+              >
+                <FaLinkedinIn size={16} className="w-3 h-3 sm:w-4 sm:h-4" />   LinkedIn
               </Link>
               <Link
                 href="mailto:hamsashahbaz11@gmail.com"
