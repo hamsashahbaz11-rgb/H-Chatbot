@@ -1,9 +1,9 @@
 // components/MessageActions.jsx
 "use client"
-import { Trash } from "lucide-react";
+import { Check, Trash } from "lucide-react";
 import { Edit } from "lucide-react";
 import { Copy } from "lucide-react"; // Changed from Folders to Copy for better semantics
-import { useState } from "react";
+import { useState } from "react"; 
 
 export function MessageActions({ 
   messageIndex, 

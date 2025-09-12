@@ -1,5 +1,6 @@
 import { ChatMessage } from "./ChatMessage";
 import { EmptyState } from "./EmptyState";
+import { LoadingIndicator } from "./LoadingIndicator";
 
 export function ChatMessages({ 
   messages, 
@@ -21,9 +22,9 @@ export function ChatMessages({
       {loadingHistory && (
         <div className="flex justify-center items-center py-4">
           <div className="animate-spin rounded-full h-6 w-6 sm:h-8 sm:w-8 border-b-2 border-blue-400 mx-auto mb-2"></div>
-          <p className="text-sm">Loading chat history...</p>
-        </div>
-      )}
+          <p className="text-sm"><LoadingIndicator /></p>
+          </div>
+      ) }
       
       {!hasMessages && !loadingHistory && <EmptyState />}
       
