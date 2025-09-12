@@ -1,12 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import SessionWrapper from "./components/SessionWrapper";
-import Footer from "./components/Footer";
+import SessionWrapper from "./components/SessionWrapper"; 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastProvider } from "./context/ToastContext";
 import ErrorBoundary from "./components/ErrorBoundary";
+import FooterExceptionHandler from "./components/FooterExceptionHandler";
 
 
 const geistSans = Geist({
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
             <ToastProvider>
               <Navbar />
               {children}
-              <Footer />
+             <FooterExceptionHandler />
               <ToastContainer 
                 position="top-right"
                 autoClose={5000}

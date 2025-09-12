@@ -25,7 +25,7 @@ export function ChatInput({
 
   return (
     <div className="bg-gray-900 border-t border-gray-700 p-2 sm:p-4">
-      <div className="flex space-x-2 sm:space-x-3">
+      <div className="flex space-x-2 sm:space-x-3 justify-center items-center">
         <div className="flex-1 ">
           <textarea
             value={message}
@@ -33,15 +33,16 @@ export function ChatInput({
             onKeyDown={handleKeyDown}
             placeholder={placeholder}
             rows={1}
-            className="w-full py-2 sm:py-3 px-2 overflow-hidden  rounded-full bg-gray-800 border border-gray-600 text-xs md:text-sm sm:text-base text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none "
-            style={{ minHeight: '48px', maxHeight: '10px' }}
+            
+            className="w-full py-2 sm:py-3 px-2 overflow-auto rounded-lg bg-gray-800 border border-gray-600 text-xs md:text-sm sm:text-base text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none "
+            style={{ minHeight: '48px', maxHeight: '400px' }}
             disabled={loading}
           />
         </div>
         <button
           onClick={onSend}
           disabled={loading || !message.trim()}
-          className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white text-sm sm:text-base transition-colors"
+          className="px-4 sm:px-6 py-2 sm:py-3 h-fit rounded-lg font-medium bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white text-sm sm:text-base transition-colors"
         >
           {loading ? <LoadingIndicator /> :(<Send className="w-4 h-4" />)}
         </button>

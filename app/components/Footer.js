@@ -70,6 +70,7 @@ const Footer = () => {
             <span className="relative z-10">Email</span>
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-600/0 via-red-600/0 to-red-600/0 group-hover:from-red-600/10 group-hover:via-red-600/5 group-hover:to-red-600/10 transition-all duration-300"></div>
           </Link>
+\
           
         </div>
       </div>
