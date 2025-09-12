@@ -289,7 +289,7 @@ export default function Navbar() {
                       </button>
                       </Link>
 
-                      <div className="w-full" onClick={closeMobileMenu}>
+                      <div className="w-full" >
                         <DialogWithInput onSave={handleConversation} />
                       </div>
 

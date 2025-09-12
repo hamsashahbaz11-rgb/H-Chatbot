@@ -69,7 +69,7 @@ export default function DialogWithInput({ onSave }) {
           </DialogHeader>
         </div>
 
-        <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
           <div className="*:not-first:mt-2">
             <Label htmlFor={id}>Chat Name</Label>
             <Input
