@@ -1,10 +1,13 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, Sparkles, Brain, Users, Zap, Shield, ArrowRight, Star, Link } from 'lucide-react';
-import Footer from './components/Footer';
 import VideoComponent from './components/VideoComponent';
+import { toast } from 'react-toastify';
+import { useSession } from 'next-auth/react';
 
-export default function Home({ session }) {
+export default function Home() {
+      const { data: session } = useSession();
+    
     const [isVisible, setIsVisible] = useState(false);
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
     useEffect(() => {
@@ -127,7 +130,12 @@ export default function Home({ session }) {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <button className="group bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 flex items-center space-x-2 shadow-2xl backdrop-blur-sm">
+                        <button className="group bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 flex items-center space-x-2 shadow-2xl backdrop-blur-sm"
+                        onClick={()=>{
+                            if(!session){
+                                return toast("Login First to chat")
+                            }
+                        }}>
                             <span>Start Chatting Now</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
@@ -248,8 +256,15 @@ export default function Home({ session }) {
                         <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto font-light">
                             Join thousands of users who've discovered the future of personalized conversations. Your AI companion is waiting.
                         </p>
-                        <button className="group bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 px-10 py-5 rounded-xl text-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 flex items-center space-x-3 mx-auto shadow-2xl backdrop-blur-sm">
+                        
+                       
+                        <button className="group bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 px-10 py-5 rounded-xl text-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 flex items-center space-x-3 mx-auto shadow-2xl backdrop-blur-sm"  onClick={()=>{
+                            if(!session){
+                                return toast("Login First to chat")
+                            }
+                        }}>
                             <span>Begin Your Journey</span>
+                            
                             <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
                     </div>
